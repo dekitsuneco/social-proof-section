@@ -63,6 +63,13 @@ body {
 
 
       background-color: hsl(0, 0%, 100%);
+      background-image: url('../../src/assets/images/bg-pattern-top-desktop.svg'), url('../../src/assets/images/bg-pattern-bottom-desktop.svg');
+      background-position: left top, right bottom;
+      background-repeat: no-repeat, no-repeat;
+
+      @media(max-width: 1024px) {
+        background-image: url('../../src/assets/images/bg-pattern-top-mobile.svg'), url('../../src/assets/images/bg-pattern-bottom-mobile.svg');
+      }
 
       &__top {
         margin: 0px 0px 61px 0;
@@ -200,7 +207,7 @@ body {
       height: 1rem;
 
 
-      background-image: url('../../src/assets/images/icon-star.svg');
+      background-image: url('../../src/assets/icons/icon-star.svg');
       object-fit: contain;
     }
 }
