@@ -45,6 +45,14 @@ body {
 .block {
   display: flex;
   flex-flow: row wrap;
+
+  @media(max-width: 932px) {
+    flex-flow: column nowrap;
+    align-items: center;
+    row-gap: 61px;
+
+    text-align: center;
+  }
   
   &__promotion {
     flex: 1 1 50%;
@@ -58,14 +66,20 @@ body {
       font-size: 3rem;
       font-weight: bold;
       color:  hsl(300, 43%, 22%);
+
+      @media(max-width: 932px) {
+        margin-bottom: 20px;
+      }
     }
     &__explanation {
+      max-width: 400px;
+
+
       line-height: 1.3rem;
       color: hsl(303, 10%, 53%);
     }
 
   &__ratings {}
-  flex: 1 1 50%;
 }
 
 .ratings {
@@ -75,38 +89,22 @@ body {
   min-width: 366.22px;
   width: 50%;
 
+
   &__rating {
-  position: relative;
+    display: flex;
 
-  margin: 0px 0px 12px 0;
-  padding: 12px 40px 12px 130px;
+    row-gap: 12px;
+    column-gap: 18px;
 
-  width: 366.22px;
+    min-width: 366.22px;
 
-
-  font-weight: bold;
-
-  background-color: hsl(300, 24%, 96%);
-
-  border-radius: 8px;
+    margin: 0px 0px 12px 0;
+    padding: 12px 40px 12px 25px;
 
 
-    &::before {
-      content: '';
-      display: inline-block;
-      
-      
-      position: absolute;
-      top: 12px;
-      left: 20px;
-      
-      width: 85px;
-      height: 16px;
-      
-      
-      background-image: url('../../src/assets/images/icon-star.svg');
-      object-fit: contain;
-    }
+    background-color: hsl(300, 24%, 96%);
+    
+    border-radius: 8px;
 
     &:last-child {
       margin-bottom: 0;
@@ -121,7 +119,32 @@ body {
     &:nth-child(3) {
       align-self: end;
     }
+
+    @media(max-width: 932px) {
+      flex-flow: column nowrap;
+      align-items: center;
+
+      padding: 12px 0;
+    }
   }
+    &__resource {
+      font-weight: bold;
+      color: hsl(300, 43%, 22%);
+
+      @media(max-width: 932px) {
+        
+      }
+    }
+    &__stars {
+      display: inline-block;
+
+      width: 85px;
+      height: 1rem;
+
+
+      background-image: url('../../src/assets/images/icon-star.svg');
+      object-fit: contain;
+    }
 }
 
 .reviews {
