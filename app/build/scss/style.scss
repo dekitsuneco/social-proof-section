@@ -34,22 +34,27 @@ body {
       background-color: hsl(0, 0%, 100%);
 
       &__top {
-        display: flex;
-        flex-flow: row wrap;
+        margin: 0px 0px 61px 0;
       }
 
-      &__bottom {
-
-      }
+      &__bottom {}
     }
   }
 }
 
 .block {
+  display: flex;
+  flex-flow: row wrap;
+  
   &__promotion {
     flex: 1 1 50%;
+
   }
     &__summary {
+      margin: 0px 0px 12px 0;
+      max-width: 400px;
+
+
       font-size: 3rem;
       font-weight: bold;
       color:  hsl(300, 43%, 22%);
@@ -63,10 +68,67 @@ body {
   flex: 1 1 50%;
 }
 
+.ratings {
+  display: flex;
+  flex-flow: column nowrap;
+
+  min-width: 366.22px;
+  width: 50%;
+
+  &__rating {
+  position: relative;
+
+  margin: 0px 0px 12px 0;
+  padding: 12px 40px 12px 130px;
+
+  width: 366.22px;
+
+
+  font-weight: bold;
+
+  background-color: hsl(300, 24%, 96%);
+
+  border-radius: 8px;
+
+
+    &::before {
+      content: '';
+      display: inline-block;
+      
+      
+      position: absolute;
+      top: 12px;
+      left: 20px;
+      
+      width: 85px;
+      height: 16px;
+      
+      
+      background-image: url('../../src/assets/images/icon-star.svg');
+      object-fit: contain;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    &:nth-child(1) {
+      align-self: start;
+    }
+    &:nth-child(2) {
+      align-self: center;
+    }
+    &:nth-child(3) {
+      align-self: end;
+    }
+  }
+}
+
 .reviews {
   display: flex;
   flex-flow: row wrap;
   gap: 25px;
+
   .card{
     flex: 1 1 calc((100% - 50px)  / 3);
     min-width: 257px;
@@ -120,4 +182,22 @@ body {
 }
 
 /* || FOOTER */
-.footer{}
+.footer{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .attribution {
+    padding: 15px 0;
+
+
+    font-size: 11px;
+    text-align: center;
+
+
+    a {
+      color: hsl(228, 45%, 44%);
+    }
+  }
+}
+
