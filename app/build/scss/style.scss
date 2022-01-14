@@ -2,6 +2,19 @@
 @import './vars.scss';
 @import './mixins.scss';
 
+/* Breakpoints
+* 0 = 1120px
+* 1 = 1240px
+* 2 = 932px
+* 3 = 425px
+* 4 = 320px
+*/
+
+* {
+  //outline: 3px solid red;
+  //overflow: hidden;
+}
+
 /* | Global */
 body {
   font-family: sans-serif;
@@ -11,8 +24,24 @@ body {
 /* | Common */
 .container {
   max-width: 1224px;
-  margin: 0px auto;
+  margin: 0 auto;
   padding: 0 100px;
+
+  @media (max-width: 1240px) {
+    max-width: 1024px;
+  }
+  
+  @media (max-width: 932px) {
+    padding: 0px 45px;
+  }
+  
+  @media (max-width: 425px) {
+    padding: 0px 25px;
+  }
+  
+  @media (max-width: 320px) {
+    padding: 0;
+  }
 }
 /* | Page */
 .wrapper {
@@ -25,7 +54,18 @@ body {
   .content {
     flex: 1 1 auto;
 
+    padding: min(7rem, 5%) 0;
+
+
     @include flex-center;
+
+    @media(max-width: 1120px) {
+      padding: 2%;
+    }
+
+    @media(max-width: 1024px) {
+      padding: 0;
+    }
 
     .section {
       padding: 90px 0;
@@ -90,6 +130,10 @@ body {
   min-width: 366.22px;
   width: 50%;
 
+  @media(max-width: 425px) {
+    min-width: 100%;
+  }
+
 
   &__rating {
     display: flex;
@@ -113,12 +157,20 @@ body {
 
     &:nth-child(1) {
       align-self: start;
+
+      @media(max-width: 932px) {
+        align-self: center;
+      }
     }
     &:nth-child(2) {
       align-self: center;
     }
     &:nth-child(3) {
       align-self: end;
+
+      @media(max-width: 932px) {
+        align-self: center;
+      }
     }
 
     @media(max-width: 932px) {
@@ -126,6 +178,14 @@ body {
       align-items: center;
 
       padding: 12px 0;
+    }
+
+    @media(max-width: 425px) {
+      min-width: 100%;
+    }
+
+    @media (max-width: 320px) {
+      border-radius: unset;
     }
   }
     &__resource {
@@ -162,6 +222,10 @@ body {
 
     border-radius: 8px;
     background-color: hsl(300, 43%, 22%);
+
+    @media(max-width: 425px) {
+      min-width: 100%;
+    }
 
     &__author{
       display: flex;
