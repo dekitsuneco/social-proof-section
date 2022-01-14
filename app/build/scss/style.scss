@@ -45,12 +45,13 @@ body {
 .block {
   display: flex;
   flex-flow: row wrap;
+  row-gap: 61px;
 
   @media(max-width: 932px) {
     flex-flow: column nowrap;
     align-items: center;
-    row-gap: 61px;
 
+    
     text-align: center;
   }
   
