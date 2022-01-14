@@ -1,0 +1,29 @@
+@import './nullify.scss';
+@import './vars.scss';
+@import './mixins.scss';
+
+/* | Global */
+body {
+  font-family: sans-serif;
+}
+/* | Common */
+.container {
+  max-width: 1024px;
+  margin: 0px auto;
+}
+/* | Page */
+.wrapper {
+  display: flex;
+  flex-direction: column;
+
+  /* || HEADER */
+  .header {}
+
+  /* || MAIN */
+  .content {
+    flex: 1 1 auto;
+  }
+
+  /* || FOOTER */
+  .footer{}
+}
