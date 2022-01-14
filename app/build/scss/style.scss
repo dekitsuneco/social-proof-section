@@ -5,25 +5,119 @@
 /* | Global */
 body {
   font-family: sans-serif;
+
+  background-color: hsl(300, 24%, 96%);
 }
 /* | Common */
 .container {
-  max-width: 1024px;
+  max-width: 1224px;
   margin: 0px auto;
+  padding: 0 100px;
 }
 /* | Page */
 .wrapper {
   display: flex;
   flex-direction: column;
 
-  /* || HEADER */
-  .header {}
+  height: 100%;
 
   /* || MAIN */
   .content {
     flex: 1 1 auto;
-  }
 
-  /* || FOOTER */
-  .footer{}
+    @include flex-center;
+
+    .section {
+      padding: 90px 0;
+
+
+      background-color: hsl(0, 0%, 100%);
+
+      &__top {
+        display: flex;
+        flex-flow: row wrap;
+      }
+
+      &__bottom {
+
+      }
+    }
+  }
 }
+
+.block {
+  &__promotion {
+    flex: 1 1 50%;
+  }
+    &__summary {
+      font-size: 3rem;
+      font-weight: bold;
+      color:  hsl(300, 43%, 22%);
+    }
+    &__explanation {
+      line-height: 1.3rem;
+      color: hsl(303, 10%, 53%);
+    }
+
+  &__ratings {}
+  flex: 1 1 50%;
+}
+
+.reviews {
+  display: flex;
+  flex-flow: row wrap;
+  gap: 25px;
+  .card{
+    flex: 1 1 calc((100% - 50px)  / 3);
+    min-width: 257px;
+
+    padding: 35px 25px;
+
+
+    border-radius: 8px;
+    background-color: hsl(300, 43%, 22%);
+
+    &__author{
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      row-gap: 10px;
+
+      margin: 0px 0px 25px 0;
+    }
+      &__img{
+        flex: 0 0 50px;
+
+        margin: 0px 20px 0px 0;
+
+
+        overflow: hidden;
+        border-radius: 50%;
+        
+        img {
+          max-width: 100%;
+        }
+      }
+      &__user-info{
+        text-align: center;
+      }
+        &__user-name{
+          margin: 0px 0px 3px 0;
+
+
+          font-weight: 600;
+          color: hsl(0, 0%, 100%);
+        }
+        &__user-status{
+          color: hsl(333, 80%, 67%);
+        }
+    
+    &__review {
+      line-height: 1.3rem;
+      color: hsl(0, 0%, 100%); 
+    }
+  }
+}
+
+/* || FOOTER */
+.footer{}
