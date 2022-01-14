@@ -3,17 +3,12 @@
 @import './mixins.scss';
 
 /* Breakpoints
-* 0 = 1120px
-* 1 = 1240px
+* 0 = 1240px
+* 1 = 1120px
 * 2 = 932px
 * 3 = 425px
 * 4 = 320px
 */
-
-* {
-  //outline: 3px solid red;
-  //overflow: hidden;
-}
 
 /* | Global */
 body {
@@ -26,10 +21,6 @@ body {
   max-width: 1224px;
   margin: 0 auto;
   padding: 0 100px;
-
-  @media (max-width: 1240px) {
-    max-width: 1024px;
-  }
   
   @media (max-width: 932px) {
     padding: 0px 45px;
@@ -77,7 +68,13 @@ body {
         margin: 0px 0px 61px 0;
       }
 
-      &__bottom {}
+      &__bottom {
+        height: 350px;
+
+        @media(max-width: 1240px) {
+          height: auto;
+        }
+      }
     }
   }
 }
@@ -213,6 +210,8 @@ body {
   flex-flow: row wrap;
   gap: 25px;
 
+  height: 95%;
+
   .card{
     flex: 1 1 calc((100% - 50px)  / 3);
     min-width: 257px;
@@ -223,6 +222,31 @@ body {
     border-radius: 8px;
     background-color: hsl(300, 43%, 22%);
 
+    &:nth-child(1) {
+      align-self: start;
+
+      @media (max-width: 1240px) {
+        align-self: auto;
+      }
+    }
+
+    &:nth-child(2) {
+      align-self: center;
+
+      @media (max-width: 1240px) {
+        align-self: auto;
+      }
+    }
+
+    &:nth-child(3) {
+      align-self: end;
+
+      @media (max-width: 1240px) {
+        align-self: auto;
+      }
+    }
+
+    
     @media(max-width: 425px) {
       min-width: 100%;
     }
